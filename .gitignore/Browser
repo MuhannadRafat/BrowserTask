@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+.opinput {
+
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 94%;
+
+}
+
+.opinput:focus{
+    outline: none;
+
+}
+
+.tablink {
+    background-color: rgb(228, 228, 228);
+    color: black;
+    float: left;
+    border: solid;
+    border-color:rgb(160, 160, 160);
+    border-width: 1px;
+    outline: none;
+    cursor: pointer;
+    padding: 3px 12px;
+    width: 12;
+    height: 12;
+    font-size: 12px;
+}
+
+.tablink:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#search_bar{
+    background-color: rgb(235, 235, 235);
+    height:40px;
+    width:100%;
+    border-color:rgb(160, 160, 160);
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+#search{
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    height: 30px;
+    border-radius: 4px;
+    width: 86%;
+    margin-top: -33px;
+    margin-left: 7%;
+}
+
+#info{
+    background-color:white;
+    color:grey;
+    border : none;    
+    height: 100%;
+    
+}
+
+#info2{
+    background-color:#ebebeb;
+    color:grey;
+    border : none;    
+    height: 100%;
+
+    
+}
+
+#info:focus{
+    outline:none;
+}
+
+#info:hover{
+    background-color:#f1f1f1;
+}
+
+input{
+    border:none;
+}
+
+.tabs{
+    height: 24px;
+   
+}
+
+.tab_info{
+
+    width: 70px;
+}
+
+.initTap{
+    position: relative;
+    left: -15px;;
+}
+
+.initaddplus{
+    position: relative;
+    left: 0px;
+
+}
+
+.option{
+    position: relative;
+    left: 1338px;
+    top: -35px;
+    background-color: #ebebeb !important;
+}
+</style>
+
+<script>
+    var tabP=30;
+    var t=0;
+    var inintPlus=0;
+    var secTab=0;
+function myFunction()
+{
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "button");
+    x.setAttribute("value", "NewTab");
+    x.setAttribute("class", "tablink tab_info initTap");
+  
+    document.getElementById("buttonAdd").style.position = "relative";
+    
+    if(t!=0)
+    {
+        if(x.style.left!=1279)
+        {
+
+        
+        inintPlus +=70 * t;
+        x.style.left=-30;
+         document.getElementById("buttonAdd").style.left= inintPlus + 89  +"px";
+        }
+
+    }
+    else
+    {
+          x.style.left=-30;
+          secTab= document.getElementById("buttonAdd").style.left= inintPlus + 89 +"px";
+        t++
+         
+
+      
+    }
+
+  document.getElementsByClassName('tabs')[0].appendChild(x);
+   
+}
+
+</script>
+</head>
+<body>
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">     
+            <div class="tabs">
+                <button id="buttonAdd" class="tablink initaddplus" onclick="myFunction()" >+</button></div>
+            </div> 
+           
+        </div>
+    </div>
+    <div id="search_bar">
+        
+         <button id="info2"><span class="glyphicon glyphicon-chevron-left"></span></button>
+         <button id="info2"><span class="glyphicon glyphicon-chevron-right"></span></button>
+         <button id="info2"><span class="glyphicon glyphicon-refresh"></span></button>
+            <div id="search">
+                <button id="info"><span class="glyphicon glyphicon-lock"></span></button>
+                <input  class="opinput" ></input>
+                <button id="info"><span class="glyphicon glyphicon-star-empty"></span></button>
+            </div>
+                <button id="info" class="option"><span class="glyphicon glyphicon-option-vertical "></span></button>
+    </div>
+</div>
+</body>
+</html>
